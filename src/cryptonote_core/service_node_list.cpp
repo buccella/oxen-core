@@ -60,7 +60,6 @@ extern "C" {
 #include "uptime_proof.h"
 #include "service_node_rules.h"
 #include "service_node_swarm.h"
-#include <lokimq/bt_serialize.h>
 #include "version.h"
 
 #undef OXEN_DEFAULT_LOG_CATEGORY
@@ -2746,7 +2745,7 @@ namespace service_nodes
     return true;
   }
 
-  //TODO: remove after HF17
+  //TODO: remove after HF18
   crypto::hash service_node_list::hash_uptime_proof(const cryptonote::NOTIFY_UPTIME_PROOF::request &proof) const
   {
     size_t buf_size;
@@ -2849,7 +2848,7 @@ namespace service_nodes
   };
 
 
-  //TODO remove after HF17
+  //TODO remove after HF18
   bool proof_info::update(uint64_t ts,
                           uint32_t ip,
                           uint16_t s_port,
@@ -2903,7 +2902,7 @@ namespace service_nodes
 
 #define REJECT_PROOF(log) do { LOG_PRINT_L2("Rejecting uptime proof from " << proof.pubkey << ": " log); return false; } while (0)
 
-  //TODO remove after HF17
+  //TODO remove after HF18
   bool service_node_list::handle_uptime_proof(cryptonote::NOTIFY_UPTIME_PROOF::request const &proof, bool &my_uptime_proof_confirmation, crypto::x25519_public_key &x25519_pkey)
   {
     uint8_t const hf_version = m_blockchain.get_current_hard_fork_version();

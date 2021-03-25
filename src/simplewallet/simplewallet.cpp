@@ -2141,7 +2141,7 @@ bool simple_wallet::welcome(const std::vector<std::string> &args)
   message_writer() << tr("Flaws in Oxen may be discovered in the future, and attacks may be developed to peek under some");
   message_writer() << tr("of the layers of privacy Oxen provides. Be safe and practice defense in depth.");
   message_writer() << "";
-  message_writer() << tr("Welcome to Oxen and financial privacy. For more information, see https://oxen.network");
+  message_writer() << tr("Welcome to Oxen and financial privacy. For more information, see https://oxen.io");
   return true;
 }
 
@@ -6293,7 +6293,6 @@ bool simple_wallet::query_locked_stakes(bool print_result)
     using namespace cryptonote;
     auto response = m_wallet->list_current_stakes();
 
-    cryptonote::account_public_address const primary_address = m_wallet->get_address();
     for (rpc::GET_SERVICE_NODES::response::entry const &node_info : response)
     {
       bool only_once = true;
